@@ -1,6 +1,6 @@
 # Roam JS Extension
 
-This is a collection of my JS Extension for Roam Research.
+This is a collection of my JS Extensions for Roam Research.
 
 ## Extensions
 
