@@ -16,8 +16,8 @@ Script to copy:
 // Tip: The default is 100, from there you can increase or decrease the value
 window.roamdarkmode = {
   brightness: "100",
-  contrast: "90",
-  sepia: "10",
+  contrast: "130",
+  sepia: "0",
 };
 
 // ---- LOAD MAIN SCRIPT ---- //
@@ -43,4 +43,4 @@ document.getElementsByTagName("head")[0].appendChild(script);
 
 ## Having trouble?
 
-Just write me directly on Twitter (@wirtzdan)
+Just write me directly on Twitter at [@wirtzdan](https://twitter.com/wirtzdan)
