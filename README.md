@@ -6,13 +6,13 @@ This is a collection of my JS Extensions for Roam Research.
 
 ### Darkmode
 
-The darkmode extension adds a small toggle to the toolbar, which you can use to quickly switch Roam Research to a dark mode.
+The darkmode extension adds a small toggle to the toolbar, which you can use to quickly switch Roam Research to a dark mode. Uses [Darkreader](darkreader.org/help/en/) under the hood.
 
-Script to copy:
+**Script to copy:**
 
 ```javascript
 // ---- VARIABLES ---- //
-// Changes this variables to adjust the appearance of the dark mode
+// Change these variables to adjust the appearance of the dark mode
 // Tip: The default is 100, from there you can increase or decrease the value
 window.roamdarkmode = {
   brightness: "100",

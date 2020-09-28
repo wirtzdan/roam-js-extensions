@@ -1,5 +1,5 @@
 // ---- VARIABLES ---- //
-// Changes this variables to adjust the appearance of the dark mode
+// Changee these variables to adjust the appearance of the dark mode
 // Tip: The default is 100, from there you can increase or decrease the value
 window.roamdarkmode = {
   brightness: "100",
