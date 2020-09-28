@@ -90,16 +90,13 @@ function toggleDarkMode() {
   const el = document.documentElement;
   const toggle = document.getElementById("wirtzdan-dark-mode-toggle");
   const theme = el.getAttribute("data-theme");
+  const settings = window.roamdarkmode;
 
   if (theme === "light") {
     el.setAttribute("data-theme", "dark");
     toggle.innerHTML = "";
     toggle.appendChild(moonIcon());
-    DarkReader.enable({
-      brightness: 105,
-      contrast: 130,
-      sepia: 0,
-    });
+    DarkReader.enable({ settings });
   } else {
     el.setAttribute("data-theme", "light");
     toggle.innerHTML = "";
