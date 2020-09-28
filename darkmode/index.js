@@ -96,7 +96,7 @@ function toggleDarkMode() {
     el.setAttribute("data-theme", "dark");
     toggle.innerHTML = "";
     toggle.appendChild(moonIcon());
-    DarkReader.enable({ settings });
+    DarkReader.enable(settings);
   } else {
     el.setAttribute("data-theme", "light");
     toggle.innerHTML = "";

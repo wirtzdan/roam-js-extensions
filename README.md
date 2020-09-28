@@ -15,8 +15,8 @@ The darkmode extension adds a small toggle to the toolbar, which you can use to 
 // Change these variables to adjust the appearance of the dark mode
 // Tip: The default is 100, from there you can increase or decrease the value
 window.roamdarkmode = {
-  brightness: "100",
-  contrast: "130",
+  brightness: "130",
+  contrast: "100",
   sepia: "0",
 };
 
