@@ -1,9 +1,7 @@
-if( typeof window.wirtzdan_darkmode == 'undefined') {
-  
- window.wirtzdan_darkmode =  {};
-  
-  (()=>{
-    
+if (typeof window.wirtzdan_darkmode == "undefined") {
+  window.wirtzdan_darkmode = {};
+
+  (() => {
     // ---- SVG Icons ---- //
     function moonIcon() {
       var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -65,16 +63,29 @@ if( typeof window.wirtzdan_darkmode == 'undefined') {
     function addThemeVariable() {
       const el = document.documentElement;
       el.setAttribute("data-theme", "light");
+      console.log("🚀 ~ file: index.js ~ line 85 ~ addThemeVariable ~ el", el);
     }
 
     function loadDarkReader() {
       const script = document.createElement("script");
       script.src = `https://cdn.jsdelivr.net/npm/darkreader@4.9.17/darkreader.min.js`;
       script.type = "text/javascript";
+
       document.getElementsByTagName("head")[0].appendChild(script);
+      console.log(
+        "🚀 ~ file: index.js ~ line 80 ~ loadDarkReader ~ document.getElementsByTagName(head)",
+        document.getElementsByTagName("head")
+      );
     }
 
     function addDarkModeToggle() {
+      roamTopbar = document.getElementsByClassName("rm-topbar")[0];
+
+      if (roamTopbar == undefined) {
+        window.setTimeout(addDarkModeToggle, 500);
+        return;
+      }
+
       const el = document.createElement("div");
       el.id = "wirtzdan-dark-mode-toggle";
       el.onclick = () => {
@@ -88,12 +99,17 @@ if( typeof window.wirtzdan_darkmode == 'undefined') {
         "height: 24px; width: 24px; text-align: center; color: #5C7080; cursor: pointer"
       );
 
-      document.querySelector(".roam-topbar .flex-h-box").appendChild(spacer);
-      document.querySelector(".roam-topbar .flex-h-box").appendChild(el);
+      document.querySelector(".rm-topbar").appendChild(spacer);
+      document.querySelector(".rm-topbar").appendChild(el);
     }
 
     function toggleDarkMode() {
       const el = document.documentElement;
+      console.log(
+        "🚀 ~ file: index.js ~ line 109 ~ toggleDarkMode ~ document.getElementById(wirtzdan-dark-mode-toggle)",
+        document.getElementById("wirtzdan-dark-mode-toggle")
+      );
+
       const toggle = document.getElementById("wirtzdan-dark-mode-toggle");
       const theme = el.getAttribute("data-theme");
       const settings = window.roamdarkmode;
@@ -102,7 +118,7 @@ if( typeof window.wirtzdan_darkmode == 'undefined') {
         el.setAttribute("data-theme", "dark");
         toggle.innerHTML = "";
         toggle.appendChild(moonIcon());
-        DarkReader.setFetchMethod(window.fetch)          
+        DarkReader.setFetchMethod(window.fetch);
         DarkReader.enable(settings);
       } else {
         el.setAttribute("data-theme", "light");
@@ -111,11 +127,10 @@ if( typeof window.wirtzdan_darkmode == 'undefined') {
         DarkReader.disable();
       }
     }
+
     // ---- Initialise Extension---- //
     loadDarkReader();
     addThemeVariable();
     addDarkModeToggle();
-  
   })();
-  
 }
